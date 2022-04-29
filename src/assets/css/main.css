@@ -47,6 +47,7 @@
 	--gap: 5rem;
 	/* timing */
 	--trs: .5s ease;
+	--cubic-bezier: .5s cubic-bezier(.4, .6, .5, 1);
 }
 
 /* styles */

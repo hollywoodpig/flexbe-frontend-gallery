@@ -6,29 +6,47 @@ defineProps({
 
 <template>
 	<div class="tiles">
-		<div
-			class="tile"
-			v-for="(photo, index) in photos"
-			:key="index"
-			:style="{
-				background: photo.color,
-				aspectRatio: `${photo.width} / ${photo.height}`
-			}"
-		>
-			<img
-				:src="photo.urls.small"
-				:alt="photo.alt_description"
-				@load="photo.show = true"
-				:class="[
-					'tile__img',
-					{ 'tile__img_show': photo.show }
-				]"
-			/>
-		</div>
+		<TransitionGroup name="tiles">
+			<div
+				class="tile"
+				v-for="(photo, index) in photos"
+				:key="index"
+				:style="{
+					background: photo.color,
+					aspectRatio: `${photo.width} / ${photo.height}`
+				}"
+			>
+				<img
+					:src="photo.urls.small"
+					:alt="photo.alt_description"
+					@load="photo.show = true"
+					:class="[
+						'tile__img',
+						{ 'tile__img_show': photo.show }
+					]"
+				/>
+			</div>
+		</TransitionGroup>
 	</div>
 </template>
 
 <style>
+.tiles-move,
+.tiles-enter-active,
+.tiles-leave-active {
+  transition: opacity var(--trs), transform var(--cubic-bezier);
+}
+
+.tiles-enter-from,
+.tiles-leave-to {
+  opacity: 0;
+  transform: translateX(10rem);
+}
+
+.tiles-leave-active {
+  position: absolute;
+}
+
 .tiles {
 	column-count: 3;
 	column-gap: var(--gap);
