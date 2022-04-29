@@ -1,0 +1,108 @@
+/* resets */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* fonts */
+
+@font-face {
+	src: url('../fonts/open-sans-300.woff2');
+	font-family: '_open-sans';
+	font-display: swap;
+	font-weight: 300;
+}
+
+@font-face {
+	src: url('../fonts/open-sans-400.woff2');
+	font-family: '_open-sans';
+	font-display: swap;
+	font-weight: 400;
+}
+
+@font-face {
+	src: url('../fonts/playfair-display-700.woff2');
+	font-family: '_playfair-display';
+	font-display: swap;
+	font-weight: 700;
+}
+
+/* vars */
+
+:root {
+	/* colors */
+	--text-color: #020202;
+	--bg-color: #f2f2f2;
+	--border-color: #d6dada;
+	/* typography */
+	--h1-size: 50px;
+	--text-size: 20px;
+	--line-height: 1.8;
+	--line-height-sm: 1.5;
+	/* sizing */
+	--bdrs: .2em;
+	--base: 5px;
+	--gap: 5rem;
+	/* timing */
+	--trs: .5s ease;
+}
+
+/* styles */
+
+html {
+	font-size: var(--base);
+}
+
+body {
+	min-width: 320px;
+	background: var(--bg-color);
+	color: var(--text-color);
+	font-family: '_open-sans', system-ui;
+	font-size: var(--text-size);
+	text-align: center;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: '_playfair-display', system-ui;
+	line-height: var(--line-height-sm);
+}
+
+h1 {
+	font-size: var(--h1-size);
+}
+
+/* container */
+
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 0 calc(var(--gap) * 2);
+}
+
+/* space */
+
+.space-y {
+	margin: 5rem 0;
+}
+
+/* last item */
+
+.last-item {
+	height: 5rem;
+	border-radius: var(--bdrs);
+}
+
+/* == media == */
+
+@media (max-width: 1200px) {
+	.container {
+		max-width: 980px;
+	}
+}
