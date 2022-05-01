@@ -31,7 +31,6 @@ defineProps({
 </template>
 
 <style>
-.tiles-move,
 .tiles-enter-active,
 .tiles-leave-active {
   transition: opacity var(--trs), transform var(--cubic-bezier);
