@@ -13,7 +13,7 @@ defineProps({
 				:key="index"
 				:style="{
 					background: photo.color,
-					aspectRatio: `${photo.width} / ${photo.height}`
+					'--ratio': (photo.height / photo.width) * 100 + '%'
 				}"
 			>
 				<img
@@ -33,17 +33,17 @@ defineProps({
 <style>
 .tiles-enter-active,
 .tiles-leave-active {
-  transition: opacity var(--trs), transform var(--cubic-bezier);
+	transition: opacity var(--trs), transform var(--cubic-bezier);
 }
 
 .tiles-enter-from,
 .tiles-leave-to {
-  opacity: 0;
-  transform: translateX(10rem);
+	opacity: 0;
+	transform: translateX(10rem);
 }
 
 .tiles-leave-active {
-  position: absolute;
+	position: absolute;
 }
 
 .tiles {
@@ -59,9 +59,25 @@ defineProps({
 	overflow: hidden;
 	border-radius: var(--bdrs);
 	border: 1px solid var(--border-color);
+	position: relative;
+}
+
+.tile::before {
+	content: '';
+	padding-top: var(--ratio);
+	float: left;
+}
+
+.tile::after {
+	content: '';
+	display: block;
+	clear: both;
 }
 
 .tile__img {
+	position: absolute;
+	left: 0;
+	top: 0;
 	width: 100%;
 	height: 100%;
 	transition: opacity var(--trs);
