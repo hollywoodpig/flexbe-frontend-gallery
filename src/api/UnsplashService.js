@@ -1,6 +1,7 @@
-import useFetch from '../hooks/useFetch'
+import useFetch from '../composable/useFetch'
 
 export default class UnsplashService {
+
 	static accessKey = 'l-O-OrMJ5hGtH5gVLw-QX5KM0U2qj7chj9Je41L3yFw'
 
 	static async getAll(limit, page) {

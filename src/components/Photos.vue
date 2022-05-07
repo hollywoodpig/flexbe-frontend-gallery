@@ -5,10 +5,10 @@ defineProps({
 </script>
 
 <template>
-	<div class="tiles">
-		<TransitionGroup name="tiles">
+	<div class="photos">
+		<TransitionGroup name="photos">
 			<div
-				class="tile"
+				class="photo"
 				v-for="(photo, index) in photos"
 				:key="index"
 				:style="{
@@ -21,8 +21,8 @@ defineProps({
 					:alt="photo.alt_description"
 					@load="photo.show = true"
 					:class="[
-						'tile__img',
-						{ 'tile__img_show': photo.show }
+						'photo__img',
+						{ 'photo__img_show': photo.show }
 					]"
 				/>
 			</div>
@@ -31,50 +31,52 @@ defineProps({
 </template>
 
 <style>
-.tiles-enter-active,
-.tiles-leave-active {
+.photos-enter-active,
+.photos-leave-active {
 	transition: opacity var(--trs), transform var(--cubic-bezier);
 }
 
-.tiles-enter-from,
-.tiles-leave-to {
+.photos-enter-from,
+.photos-leave-to {
 	opacity: 0;
 	transform: translateX(10rem);
 }
 
-.tiles-leave-active {
+.photos-leave-active {
 	position: absolute;
 }
 
-.tiles {
+.photos {
 	column-count: 3;
 	column-gap: var(--gap);
 }
 
-.tiles .tile {
+.photos .photo {
 	margin-bottom: var(--gap);
 }
 
-.tile {
+.photo {
+	width: 100%;
+	display: inline-flex;
 	overflow: hidden;
 	border-radius: var(--bdrs);
 	border: 1px solid var(--border-color);
 	position: relative;
 }
 
-.tile::before {
+.photo::before {
 	content: '';
 	padding-top: var(--ratio);
 	float: left;
 }
 
-.tile::after {
+.photo::after {
 	content: '';
 	display: block;
 	clear: both;
 }
 
-.tile__img {
+.photo__img {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -84,12 +86,12 @@ defineProps({
 	opacity: 0;
 }
 
-.tile__img_show {
+.photo__img_show {
 	opacity: 1;
 }
 
 @media (max-width: 768px) {
-	.tiles {
+	.photos {
 		column-count: 1;
 	}
 }

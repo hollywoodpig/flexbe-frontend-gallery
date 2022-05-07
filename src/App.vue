@@ -4,7 +4,7 @@ import UnsplashService from './api/UnsplashService'
 import Photos from './components/Photos.vue'
 import Loader from './components/ui/Loader.vue'
 import Section from './components/ui/Section.vue'
-import useObserver from './hooks/useObserver'
+import useObserver from './composable/useObserver'
 
 /* == photos == */
 
@@ -49,6 +49,7 @@ watchEffect(() => {
 
 const lastItem = ref(null)
 useObserver({ lastItem, error }, () => page.value++)
+
 </script>
 	
 <template>
