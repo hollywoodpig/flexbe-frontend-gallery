@@ -48,16 +48,18 @@ defineProps({
 
 .photos {
 	column-count: 3;
+	-webkit-column-count: 3;
+	-moz-column-count: 3;
 	column-gap: var(--gap);
 }
 
 .photos .photo {
+	width: 100%;
+	break-inside: avoid-column;
 	margin-bottom: var(--gap);
 }
 
 .photo {
-	width: 100%;
-	display: inline-flex;
 	overflow: hidden;
 	border-radius: var(--bdrs);
 	border: 1px solid var(--border-color);
