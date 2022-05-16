@@ -31,9 +31,12 @@ defineProps({
 </template>
 
 <style>
+
+/* animation */
+
 .photos-enter-active,
 .photos-leave-active {
-	transition: opacity var(--trs), transform var(--cubic-bezier);
+	transition: opacity var(--trs), transform var(--bezier);
 }
 
 .photos-enter-from,
@@ -45,6 +48,8 @@ defineProps({
 .photos-leave-active {
 	position: absolute;
 }
+
+/* photos */
 
 .photos {
 	column-count: 3;
@@ -58,6 +63,8 @@ defineProps({
 	break-inside: avoid-column;
 	margin-bottom: var(--gap);
 }
+
+/* photo */
 
 .photo {
 	overflow: hidden;
@@ -91,6 +98,8 @@ defineProps({
 .photo__img_show {
 	opacity: 1;
 }
+
+/* media */
 
 @media (max-width: 768px) {
 	.photos {

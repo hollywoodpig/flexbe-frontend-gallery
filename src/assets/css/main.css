@@ -24,7 +24,7 @@
 
 @font-face {
 	src: url('../fonts/playfair-display-700.woff2');
-	font-family: '_playfair-display';
+	font-family: '_playfair';
 	font-display: swap;
 	font-weight: 700;
 }
@@ -47,7 +47,7 @@
 	--gap: 5rem;
 	/* timing */
 	--trs: .5s ease;
-	--cubic-bezier: .5s cubic-bezier(.4, .6, .5, 1);
+	--bezier: .5s cubic-bezier(.4, .6, .5, 1);
 }
 
 /* styles */
@@ -60,7 +60,7 @@ body {
 	min-width: 320px;
 	background: var(--bg-color);
 	color: var(--text-color);
-	font-family: '_open-sans', system-ui;
+	font-family: '_open-sans', system-ui, sans-serif;
 	font-size: var(--text-size);
 	text-align: center;
 }
@@ -71,7 +71,7 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: '_playfair-display', system-ui;
+	font-family: '_playfair', system-ui, sans-serif;
 	line-height: var(--line-height-sm);
 }
 
