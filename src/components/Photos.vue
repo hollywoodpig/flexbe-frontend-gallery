@@ -19,7 +19,7 @@ defineProps({
 				<img
 					:src="photo.urls.small"
 					:alt="photo.alt_description"
-					@load="photo.show = true"
+					@load.once="photo.show = true"
 					:class="[
 						'photo__img',
 						{ 'photo__img_show': photo.show }
